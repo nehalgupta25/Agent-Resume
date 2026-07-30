@@ -39,7 +39,7 @@ if not all(all_API):
     st.error("Must give API keys")
     st.stop()
 elif all(all_API):
-    st.success(API KEYS LOADED SUCCESSFULLY!!!)
+    st.success("API KEYS LOADED SUCCESSFULLY!!!")
 else:
     st.info("PASS ALL API-KEYS")
 #============MODEL============
