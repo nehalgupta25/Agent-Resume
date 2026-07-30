@@ -21,10 +21,10 @@ st.title("AI RESUME GENERATOR")
 
 ST.write("This app helps user to build customized Professional Resume with Latest Job apply links")
 
-st.image("bg.png")
+st.image("https://github.com/nehalgupta25/Agent-Resume/blob/main/bg.png")
 
 st.sidebar.title("Fill Important Details")
-st.sidebar.image("bg.png")
+st.sidebar.image("https://github.com/nehalgupta25/Agent-Resume/blob/main/bg.png")
 
 #========API KEY=============#
 # Step 3 API Keys
@@ -42,6 +42,19 @@ elif all(all_API):
     st.success("API KEYS LOADED SUCCESSFULLY!!!")
 else:
     st.info("PASS ALL API-KEYS")
+
+#MULTISELECT OPTION
+options = ["Delhi","Mumbai", "Pune", "Banglore", "Gurugram/Gurgaon"]
+location = st.sideabar.multiselect("Select Location ",options = options)
+
+profile_op = ["Data Analysts", "AI Engineer", "Gen AI Developer", "Full Stack-Dev", "Data Scientist"]
+profile = st.sideabar.multiselect("Select Job Profile ",options = profile_op)
+
+#============GET USER INFO==============
+st.markdown("""###GET USER INFO""")
+user_info = st.text_area("""Write your Resume Description""")
+
+
 #============MODEL============
 model = ChatGoogleGenerativeAI(
     model = 'gemini-3.5-flash-lite',
@@ -146,3 +159,13 @@ def get_jobs(agent,
 
 #code = get_jobs(agent)
 #DISPLAY.HTML(code)
+
+
+if st.button("Generate Resume"):
+    with st.spinner("Agent Running"):
+        code = main_agent(agent,user_info)
+        st.html(code,width="stretch",unsafe_allow_javascript=True)
+        st.divider() #to give horizontal divide
+        
+        job_code = get_jobs(agent,location,profile)
+        st.html(job_code,width="stretch",unsafe_allow_javascript=True)
