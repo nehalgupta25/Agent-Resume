@@ -39,8 +39,8 @@ model = ChatGoogleGenerativeAI(
     google_api_key = GOOGLE_API_KEY
 )
 
-response = model.invoke("Hello Buddy!")
-response.content[-1]['text']
+#response = model.invoke("Hello Buddy!")
+#response.content[-1]['text']
 
 
 #==========TOOLS================
@@ -62,7 +62,7 @@ agent = create_agent(
     tools=[search_latest_news_job]
 )
 
-agent
+#agent
 
 
 def main_agent(agent,query):
