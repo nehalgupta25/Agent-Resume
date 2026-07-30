@@ -19,8 +19,7 @@ st.set_page_config(layout="wide")
 #To Give Title
 st.title("AI RESUME GENERATOR")
 
-ST.write("This app helps user to build customized Professional 
-Resume with Latest Job apply links")
+ST.write("This app helps user to build customized Professional Resume with Latest Job apply links")
 
 st.image("bg.png")
 
