@@ -3,7 +3,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 import langchain
 from langchain.agents import create_agent
-import langchain_community
+
 from tavily import TavilyClient
 import pytesseract as pyt
 import streamlit as st
@@ -22,6 +22,9 @@ st.title("AI RESUME GENERATOR")
 ST.write("This app helps user to build customized Professional Resume with Latest Job apply links")
 
 st.image("bg.png")
+
+st.sidebar.title("Fill Important Details")
+st.sidebar.image("bg.png")
 
 #========API KEY=============
 # Step 3 API Keys
