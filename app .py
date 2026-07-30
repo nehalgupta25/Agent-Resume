@@ -13,6 +13,17 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
+#To Show web-page: complete page layout
+st.set_page_config(layout="wide")
+
+#To Give Title
+st.title("AI RESUME GENERATOR")
+
+ST.write("This app helps user to build customized Professional 
+Resume with Latest Job apply links")
+
+st.image("bg.png")
+
 #========API KEY=============
 # Step 3 API Keys
 GOOGLE_API_KEY = "AQ.Ab8RN6KC-xfJqWCzCLy7PUp2kERQJIATViHWUc2A0VVkq061YA"
@@ -92,9 +103,9 @@ def main_agent(agent,query):
 
     return code
 
-code = main_agent(agent,"ALAN TURING, GEN AI EXPERT")
-from IPython import display as DISPLAY
-DISPLAY.HTML(code)
+#code = main_agent(agent,"ALAN TURING, GEN AI EXPERT")
+#from IPython import display as DISPLAY
+#DISPLAY.HTML(code)
 
 
 #Fetch Latest Domain rwlated Jobs using Tavily
@@ -122,5 +133,5 @@ def get_jobs(agent,
 
 
 
-code = get_jobs(agent)
-DISPLAY.HTML(code)
+#code = get_jobs(agent)
+#DISPLAY.HTML(code)
