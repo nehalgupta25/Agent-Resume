@@ -1,3 +1,4 @@
+python-3.11
 langchain
 langchain-google-genai
 langchain-groq
