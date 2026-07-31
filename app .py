@@ -21,10 +21,10 @@ st.title("AI RESUME GENERATOR")
 
 ST.write("This app helps user to build customized Professional Resume with Latest Job apply links")
 
-st.image("https://github.com/nehalgupta25/Agent-Resume/blob/main/bg.png")
+st.image("https://raw.github.com/nehalgupta25/Agent-Resume/blob/main/bg.png")
 
 st.sidebar.title("Fill Important Details")
-st.sidebar.image("https://github.com/nehalgupta25/Agent-Resume/blob/main/bg.png")
+st.sidebar.image("https://raw.github.com/nehalgupta25/Agent-Resume/blob/main/bg.png")
 
 #========API KEY=============#
 # Step 3 API Keys
@@ -40,11 +40,17 @@ if not all(all_API):
     st.stop()
 elif all(all_API):
     st.success("API KEYS LOADED SUCCESSFULLY!!!")
+    #============MODEL============
+    model = ChatGoogleGenerativeAI(
+        model = 'gemini-3.5-flash-lite',
+        google_api_key = GOOGLE_API_KEY
+    )
+    
 else:
     st.info("PASS ALL API-KEYS")
 
 #MULTISELECT OPTION
-options = ["Delhi","Mumbai", "Pune", "Banglore", "Gurugram/Gurgaon"]
+options = ["Delhi", "Mumbai", "Pune", "Bangalore", "Gurugram/Gurgaon"]
 location = st.sideabar.multiselect("Select Location ",options = options)
 
 profile_op = ["Data Analysts", "AI Engineer", "Gen AI Developer", "Full Stack-Dev", "Data Scientist"]
